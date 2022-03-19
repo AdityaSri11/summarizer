@@ -1,2 +1,3 @@
 def firstWord(result):
-    print(result[0])
+    
+    return result[0]

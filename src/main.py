@@ -5,8 +5,11 @@ import os
 win = tk.Tk()
 win.geometry("650x250")
 
+frame= tk.Frame(win, relief= 'sunken', bg= "white")
+frame.pack(fill= tk.BOTH, expand= True, padx= 10, pady=50)
+
 # Title of the GUI 
-label = tk.Label(win, text = "Article or Text Summarizer", font = ('Times New Roman bold',20))
+label = tk.Label(frame, text = "Article or Text Summarizer", font = ('Times New Roman bold',20))
 label.pack(padx = 10, pady = 25)
 
 
@@ -26,14 +29,15 @@ def getTextInput():
     return
     
 # Textbox 
-textExample = tk.Text(win, relief = tk.RIDGE, height = 25, borderwidth = 2)
-textExample.pack()
+textExample = tk.Text(frame, relief = tk.RIDGE, height = 25, borderwidth = 2)
+textExample.pack(side = tk.LEFT)
 
 
 # Button Click 
-btnRead = tk.Button(win, height = 2, width = 15, text = "Summarize", 
+btnRead = tk.Button(frame, height = 2, width = 15, text = "Summarize", 
                     command = getTextInput)
-btnRead.pack(pady = 15)
+btnRead.pack(pady = 15)#, side = tk.BOTTOM)
+btnRead.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
 
 def refresh():
     btnRead.config(state = 'normal')
@@ -43,12 +47,13 @@ def refresh():
 
 
 # Run it again
-refreshButton = tk.Button(win, height = 2, width = 15, text="Try Again", command=refresh, state='disabled')
-refreshButton.pack()
+refreshButton = tk.Button(frame, height = 2, width = 15, text="Try Again", command=refresh, state='disabled')
+refreshButton.pack(side = tk.TOP)
+refreshButton.place(relx = 0.5, rely = 0.5, anchor=tk.CENTER)
 
 #Output Textbox
-textOutput = tk.Text(win, relief = tk.RIDGE, height = 25, borderwidth = 2)
-textOutput.pack()
+textOutput = tk.Text(frame, relief = tk.RIDGE, height = 25, borderwidth = 2)
+textOutput.pack(pady = 15, side = tk.RIGHT)
 
-#win.attributes('-fullscreen', True)
+win.attributes('-fullscreen', True)
 win.mainloop()

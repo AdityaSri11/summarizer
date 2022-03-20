@@ -7,11 +7,11 @@ win = tk.Tk()
 win.geometry("650x250")
 win.title("Text Summarizer")
 
-frame= tk.Frame(win, relief= 'sunken', bg= "white")
+frame= tk.Frame(win, relief= 'sunken', bg= "#d9d9d9")
 frame.pack(fill= tk.BOTH, expand= True, padx= 50, pady=50)
 
 # Title of the GUI 
-label = tk.Label(frame, text = "Article or Text Summarizer", font = ('Times New Roman bold',20))
+label = tk.Label(win, text = "Article or Text Summarizer", font = ('Times New Roman bold',20))
 label.pack(padx = 10, pady = 25)
 
 # Adding background image

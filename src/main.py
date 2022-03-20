@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import filedialog
-from summarizer import firstWord
+from tkinter import PhotoImage, filedialog
+from readContent import readInputs
 import os
 
 win = tk.Tk()
@@ -13,13 +13,19 @@ frame.pack(fill= tk.BOTH, expand= True, padx= 50, pady=50)
 label = tk.Label(frame, text = "Article or Text Summarizer", font = ('Times New Roman bold',20))
 label.pack(padx = 10, pady = 25)
 
+# Adding background image
+bg = PhotoImage(file="summarizer/assets/bg.png")
+canvas1 = tk.Canvas(win, width = 400, height = 400)
+canvas1.config(width=100, height=100)
+canvas1.pack(fill = "both", expand = True)
+canvas1.create_image( 0, 0, image = bg, anchor = "nw")
 
 # Getting the inputs from the user 
 def getTextInput():
     global out
-
+    
     result = textExample.get(1.0, tk.END+"-1c")
-    returnLetter = firstWord(result)
+    returnLetter = readInputs(result)
     textOutput.insert("1.0" , returnLetter)
 
     btnRead['text'] = "Text Summarized"
@@ -57,7 +63,6 @@ def fileUpload():
 
     fileText.close()
 
-
 #Input File Button 
 fileButton = tk.Button(frame, height = 2, width = 15, text="Upload Text File", command=fileUpload)
 fileButton.pack()
@@ -68,10 +73,9 @@ refreshButton = tk.Button(frame, height = 2, width = 15, text="Try Again", comma
 refreshButton.pack(side = tk.TOP)
 refreshButton.place(relx = 0.5, rely = 0.6, anchor=tk.CENTER)
 
-#Output Textbox
+# Output Textbox
 textOutput = tk.Text(frame, relief = tk.RIDGE, height = 25, borderwidth = 2)
 textOutput.pack(pady = 15, side = tk.RIGHT)
-
 
 #win.attributes('-fullscreen', True)
 win.mainloop()

@@ -5,6 +5,7 @@ import os
 
 win = tk.Tk()
 win.geometry("650x250")
+win.title("Text Summarizer")
 
 frame= tk.Frame(win, relief= 'sunken', bg= "white")
 frame.pack(fill= tk.BOTH, expand= True, padx= 50, pady=50)
@@ -47,6 +48,7 @@ btnRead.pack(pady = 15)#, side = tk.BOTTOM)
 btnRead.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
 
 def refresh():
+    btnRead['text'] = 'Summarize'
     btnRead.config(state = 'normal')
     refreshButton.config(state = 'disabled')
     fileButton.config(state = 'normal')

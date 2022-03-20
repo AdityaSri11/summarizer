@@ -1,8 +1,7 @@
 from newspaper import Article
 
-from summarize import generate_summary
-from summarize import summarize
-#from summarize import buildSummary
+from summarize import findSummary
+
 
 def readLink(url):
     article = Article(url)
@@ -22,7 +21,10 @@ def readInputs(result):
     #summary = buildSummary(sentencesList , 2)
     #summary = generate_summary(sentencesList, 2)
 
-    summary = summarize(sentencesList, 0.4)
+    summary = findSummary(sentencesList)
 
     return summary
 
+fileV = open("/Users/adityasrikanth/Documents/Projects/summarizer/assets/textSamples/sample03.txt" , "r")
+fileContents = fileV.read()
+readInputs(fileContents)

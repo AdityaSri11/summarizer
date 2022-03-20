@@ -1,1 +1,4 @@
 tkinter==8.6
+newspaper3k==0.2.8
+spacy==3.2.3
+en-core-web-sm==3.2.0

@@ -7,3 +7,7 @@ Shown here is a link to the project GUI: https://replit.com/@AdityaSrikanth/text
 
 WARNING: When first opening the project the loading time is very long because there are many packages and modules that repl.it must download before the GUI could be displayed. In addition, the GUI takes place in a virtual enviornment and does not have much sample text files to run, once the GUI is up and running. Finally, the repl.it platform is quite slow and is frustrating when using the GUI. 
 To allieviate all of that stress, attached below are screenshots of the program at work.
+
+![Main Screen](pic1.png)
+![File Upload](pic2.png)
+![Summarize Screen](pic3.png)

@@ -39,7 +39,14 @@ def getTextInput():
     
 # Textbox 
 textExample = tk.Text(frame, relief = tk.RIDGE, height = 25, borderwidth = 2)
+textExample.insert("1.0","Enter a text or a link here...")
 textExample.pack(side = tk.LEFT)
+
+directions = tk.Label(frame, text = "          Enter text, upload a file, or paste a link to be summarized in the box below:", font = ('Times New Roman', 15))
+directions.place(rely=0.2, anchor = tk.W)
+
+summarizeDir = tk.Label(frame, text = "Project by Aditya Srikanth", font = ('Times New Roman', 15))
+summarizeDir.place(rely=1, anchor = tk.SW)
 
 # Button Click 
 btnRead = tk.Button(frame, height = 2, width = 15, text = "Summarize", 
@@ -79,5 +86,5 @@ refreshButton.place(relx = 0.5, rely = 0.6, anchor=tk.CENTER)
 textOutput = tk.Text(frame, relief = tk.RIDGE, height = 25, borderwidth = 2)
 textOutput.pack(pady = 15, side = tk.RIGHT)
 
-#win.attributes('-fullscreen', True)
+win.attributes('-fullscreen', True)
 win.mainloop()

@@ -24,7 +24,3 @@ def readInputs(result):
     summary = findSummary(sentencesList)
 
     return summary
-
-fileV = open("/Users/adityasrikanth/Documents/Projects/summarizer/assets/textSamples/sample03.txt" , "r")
-fileContents = fileV.read()
-readInputs(fileContents)

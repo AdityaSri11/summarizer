@@ -1,5 +1,8 @@
 from newspaper import Article
 
+from summarize import generate_summary
+from summarize import summarize
+#from summarize import buildSummary
 
 def readLink(url):
     article = Article(url)
@@ -7,14 +10,19 @@ def readLink(url):
     article.parse()
 
     splitArticle = (article.text).split(" ")
-    return [splitArticle]
+    return article.text
 
 def readInputs(result):
 
     if result[0:4] == "http":
         sentencesList = readLink(result)
     else:
-        splitValues = result.split(" ")
-        sentencesList = [splitValues]
+        sentencesList = result
 
-    
+    #summary = buildSummary(sentencesList , 2)
+    #summary = generate_summary(sentencesList, 2)
+
+    summary = summarize(sentencesList, 0.4)
+
+    return summary
+
